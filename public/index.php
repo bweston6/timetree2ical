@@ -12,12 +12,13 @@ use Eluceo\iCal\Presentation\Factory\CalendarFactory;
 use TimeTreeWebApi\OauthApp\OauthClient;
 use TimeTreeWebApi\OauthApp\Parameter\GetUpcomingEventsParams;
 
+define("TOKEN", "abcdef1234567890"); // Insert personal access token from https://timetreeapp.com/developers/personal_access_tokens 
+define("CALENDAR_ID", "AbCdEf1234"); // Insert calendar ID. See the cURL example at: https://developers.timetreeapp.com/en/docs/api/oauth-app#list-calendars
+
 // Get data from TimeTree
-$instance = new OauthClient(
-	"", // insert personal access token from https://timetreeapp.com/developers/personal_access_tokens 
-);
+$instance = new OauthClient(TOKEN);
 $calendars = (array) $instance->getUpcomingEvents(
-	new GetUpcomingEventsParams("Te1ESi6yaHKj", timezone_open("Europe/London"), 7)
+	new GetUpcomingEventsParams(CALENDAR_ID, timezone_open("Europe/London"), 7)
 );
 
 // Generate events

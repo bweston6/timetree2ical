@@ -1,0 +1,6 @@
+{
+    "require": {
+        "eluceo/ical": "^2.5",
+        "timetree/timetree-sdk-php": "^1.0"
+    }
+}
